@@ -65,7 +65,7 @@ to send icmp packages to the infected machine. If this is not directly possible,
 to tranfer data over multiple machines to the outside. Our script could be extended in that manner. The daemon would be 
 required to run on all of the chained machines and would need to forward to the correct IP addresses.
 
-###Commander
+### Commander
 In our case the commander only sends a limited number of commands to the daemon. The commander only sends 
 *{e3JlYWQgfi9mbGFnLnR4dH0=}* which translates to *{{read ~/flag.txt}}*. The commander has to be able to 
 listen for incoming pings aswell since the daemon will reach out to it once the command is run. The commander
@@ -77,14 +77,15 @@ The commander sends it commands Base64 encoded.
 
 Listener and commander are run in different Threads.
 
-###Daemon
+### Daemon
 The daemon waits for incoming ICMP packages. Once it receives one, it seaches for the commands. It interprets the 
 command accordingly and sends back a ICMP package to the commander. The daemon encodes its payload with Base32 in contrast
 to the Commander which always encodes commands in Base64.
 
-#Contact
+# Contact
 Simon Schönegger 
 * [LinkedIn](https://www.linkedin.com/in/simon-sch%C3%B6negger-b4b663165/)
 * Mail: simon.schoenegger@edu.fh-joanneum.at
 
 Lejla Sarcevic
+* Mail: lejla.sarcevic@edu.fh-joanneum.at
